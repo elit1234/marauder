@@ -1,7 +1,10 @@
 import styled from 'styled-components'
-import TopBar from './TopBar'
+import dynamic from 'next/dynamic'
 
-const Container = styled.div`
+const TopBar = dynamic(() => import('./TopBar'))
+const Container = dynamic(() => import('./Container'))
+
+const Wrapper = styled.div`
     width: 100vw;
     min-height: 100%;
     min-height: 100vh;
@@ -11,13 +14,18 @@ const Container = styled.div`
         padding-left: 15%;
         padding-right: 15%;
     }
+
+    transition: all 0.5s ease-in-out;
 `
+
+const Content = styled.div``
 
 const Home = () => {
     return (
-        <Container>
+        <Wrapper>
             <TopBar />
-        </Container>
+            <Container />
+        </Wrapper>
     )
 }
 

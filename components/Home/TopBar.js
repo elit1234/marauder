@@ -22,6 +22,11 @@ const LeftSide = styled.div`
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas: 'marauder xt';
+
+    @media (max-width: 700px) {
+        width: 100%;
+    }
+    transition: width 1s ease-in-out;
 `
 
 const RightSide = styled.div`
@@ -29,6 +34,12 @@ const RightSide = styled.div`
     width: 60%;
     justify-content: flex-end;
     height: 100%;
+
+    @media (max-width: 700px) {
+        width: 30%;
+    }
+
+    transition: width 1s ease-in-out;
 `
 
 const Marauder = styled.div`
@@ -50,7 +61,7 @@ const Xt = styled.div`
     grid-area: xt;
     background-image: url('img/lilxt.png');
     background-repeat: no-repeat;
-    background-size: 70% 70%;
+    // background-size: 70% 70%;
     background-position: center center;
     cursor: default;
 `
